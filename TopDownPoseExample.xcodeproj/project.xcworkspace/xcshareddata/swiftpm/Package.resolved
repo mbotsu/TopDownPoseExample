@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "keypointdecoder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mbotsu/KeypointDecoder",
+      "state" : {
+        "revision" : "067883a441a7e1ab74f9f2769b77a4c23dd00f05",
+        "version" : "0.0.2"
+      }
+    }
+  ],
+  "version" : 2
+}
