@@ -26,3 +26,23 @@ $ curl -OL https://github.com/mbotsu/KeypointDecoder/releases/download/0.0.1/yol
     - [john-rocky/CoreML-Models](https://github.com/john-rocky/CoreML-Models#yolov7) 
         - [Yolov7 Google Colab](https://colab.research.google.com/drive/1QiTlFsN948Xt2e4WgqUB8DnGgwWwtVZS?usp=sharing)
 
+## COCO MS val set
+
+[mbotsu/KeypointDecoder v0.0.5](https://github.com/mbotsu/KeypointDecoder/releases)  
+
+```
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.529
+Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.679
+Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.614
+Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.479
+Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.614
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 20 ] = 0.593
+Average Recall     (AR) @[ IoU=0.50      | area=   all | maxDets= 20 ] = 0.702
+Average Recall     (AR) @[ IoU=0.75      | area=   all | maxDets= 20 ] = 0.665
+Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets= 20 ] = 0.528
+Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets= 20 ] = 0.684
+```
+
+|Model |AP| AP50 | AP75 | AP(M) | AP(L)|
+|--|--|--|--|--|--|
+| VitPose-b + Yolov7-tiny |  52.9 | 67.9 | 61.4 | 47.9 | 61.4| 
