@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mbotsu/KeypointDecoder",
       "state" : {
-        "revision" : "ecea8ab6279f1e6e2c369bbc9f42ee2a346b520d",
-        "version" : "0.0.4"
+        "revision" : "75cdae3495158b9c23bb7b29681362e09ce81961",
+        "version" : "0.0.5"
       }
     }
   ],
