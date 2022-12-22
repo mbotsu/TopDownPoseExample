@@ -22,12 +22,9 @@ class Pose: ObservableObject {
     do {
       let visionModel = try VNCoreMLModel(for: MLModel(contentsOf: modelURL))
       let objectRecognition = VNCoreMLRequest(model: visionModel, completionHandler: { (request, error) in
-        DispatchQueue.main.async(execute: {
-            // perform all the UI updates on the main queue
-            if let results = request.results {
-                self.drawVisionRequestResults(results)
-            }
-        })
+        if let results = request.results {
+          self.drawVisionRequestResults(results)
+        }
       })
       objectRecognition.imageCropAndScaleOption = .scaleFit
       self.requests = [objectRecognition]
@@ -67,12 +64,10 @@ class Pose: ObservableObject {
     }
     let _bboxes = bboxes
     print(bboxes)
-    Task {
-      await test(img: self.originalImage!, boxes: _bboxes)
-    }
+    test(img: self.originalImage!, boxes: _bboxes)
   }
     
-  func test(img: UIImage, boxes: [Float32]) async {
+  func test(img: UIImage, boxes: [Float32]) {
     // ==== pose ====
     let length = boxes.count / 4 * 3 * 17;
     var keypoints = [Float32](repeating: 0.0, count: length)
@@ -81,9 +76,11 @@ class Pose: ObservableObject {
     print(boxes)
     let resImage = de.renderHumanPose(img, keypoints: &keypoints, peopleNum: Int32(boxes.count/4), boxes: &_boxes)
     
-    await MainActor.run { [weak self] in
-      if resImage != nil {
-        self?.uiImage = resImage
+    Task {
+      await MainActor.run { [weak self] in
+        if resImage != nil {
+          self?.uiImage = resImage
+        }
       }
     }
   }
