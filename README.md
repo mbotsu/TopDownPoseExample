@@ -1,3 +1,9 @@
+## News
+<pre class="notranslate">
+Developed a 100% Swift version
+https://github.com/otmb/TopDownPoseEstimation
+</pre>
+
 ## What is this
 TopDown Pose Estimation on iOS
 
